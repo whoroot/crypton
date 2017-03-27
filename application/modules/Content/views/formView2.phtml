@@ -1,0 +1,51 @@
+<?php 
+
+/**
+Index général.
+Si l'utilisateur arrive sur cette page, c'est qu'il n'est pas authentifé.
+Ce Module VIEW INDEX est donc vide, car le formulaire de connexion apparaît dans le Module AUTH LOGIN
+
+**/
+?>
+
+
+<div class="wrapper" style="overflow-x:auto;">
+<h1><?php echo $GLOBALS['page'.PAGE_CODE] ?></h1>
+    <?php if(PAGE_CODE == 1){ ?>
+       <div class="infoSecondary">
+            Pour crypter votre message, choisissez une clef de chiffrement, puis entrez votre texte. <br>
+            Retenez bien cette clef, elle vous permettra de décrypter ensuite le message.
+        </div>
+    <?php } ?>
+    <?php if(PAGE_CODE == 2){ ?>
+       <div class="infoSecondary">
+            Pour décrypter votre message, choisissez la clef de chiffrement adaptée, puis entrez votre texte. <br>
+            Si vous n'êtes pas l'auteur de cryptage, demandez la clef à l'auteur. <br>
+            Sinon, vous pouvez essayer toutes les clefs 1 par 1...
+        </div>
+    <?php } ?>
+	<div class="blocText">
+        
+        <form action="crypton?codepage=<?php echo PAGE_CODE ?>&typepage=2" method="post">
+            <p> Sélectionnez une clé de chiffrement :</p>
+            <!--input type="number" name="keycode" min="13" max="21" size="5" value="13"-->
+            <select name="keycode" id="">
+               <?php 
+                $count=1;
+                for($i=13;$i<34;$i++){ ?>
+                <option value="<?php echo $i; ?>"><?php echo $count; ?></option>
+                <?php
+                  $count++;
+                 } ?>
+            </select>
+            <p> Saisissez le texte à <?php echo $GLOBALS['page'.PAGE_CODE] ?> ci-dessous</p>
+            <TEXTAREA name="textocrypt" rows=10 COLS=40></TEXTAREA>
+            <input type="submit" value="<?php echo $GLOBALS['page'.PAGE_CODE] ?>"></input>    
+        </form>
+		
+	</div>
+</div>
+<?php
+    
+
+//src="../application/library/images/logo.png"

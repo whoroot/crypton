@@ -1,0 +1,30 @@
+<?php 
+
+/**
+Index général.
+Si l'utilisateur arrive sur cette page, c'est qu'il n'est pas authentifé.
+Ce Module VIEW INDEX est donc vide, car le formulaire de connexion apparaît dans le Module AUTH LOGIN
+
+**/
+
+?>
+
+<div class="wrapper" style="overflow-x:auto;">
+<h1>Bienvenu sur <?php echo TITRESITE ?></h1>
+	<div class="blocText">
+        <p>
+            Ce petit module vous permet d'encrypter/décrypter des messages textes
+        </p>
+        <div class="contenu">
+            <a href="crypton?codepage=1" class="btn"> CRYPTER </a>
+            <a href="crypton?codepage=2" class="btn"> DECRYPTER </a>
+        </div>
+        <p>
+            Des questions ? Des remarques ? Vous souhaitez compléter/modifier/ajouter un niveau de gage ?<br>
+            N'hésitez pas à contacter le développeur (lien direct en bas de page) 
+        </p>
+		
+	</div>
+   
+</div>
+

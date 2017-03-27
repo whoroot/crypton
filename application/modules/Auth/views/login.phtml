@@ -1,0 +1,20 @@
+FORM AUTH
+
+<?php
+/* Définition des variables globales. */
+global $viewAuth, $title, $messages,$rootpath;
+?>
+
+
+<!-- Formulaire de connexion -->
+<form name="connexion" id="connexion" method="post" action="index.php">
+    <fieldset class="sitation">
+    	<legend><?php echo $messages['connecting']; ?></legend>
+        <label for="username" class="float"><?php echo $messages['lastName'] ?> :</label>
+        	<input type="text" name="username" id="username" /><br/>
+        <label for="password" class="float"><?php echo $messages['mdp'] ?> :</label>
+        	<input type="password" name="password" id="password"/><br/>
+        	<br/>
+        <div class="center"><input type="submit" value="Connexion" /></div>
+    </fieldset>
+</form>

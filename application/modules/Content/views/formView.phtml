@@ -1,0 +1,45 @@
+<?php 
+
+/**
+Index général.
+Si l'utilisateur arrive sur cette page, c'est qu'il n'est pas authentifé.
+Ce Module VIEW INDEX est donc vide, car le formulaire de connexion apparaît dans le Module AUTH LOGIN
+
+**/
+?>
+
+
+<div class="wrapper" style="overflow-x:auto;">
+<h1><?php echo $GLOBALS['page'.PAGE_CODE] ?></h1>
+   <div class="blocText">
+        <?php if(PAGE_CODE == 1){ ?>
+       <div class="infoSecondary">
+            Pour crypter votre message, entrez une "passe-phrase" (mot de passe, phrase courte). <br>
+            Cette "passe-phrase" servira de clé de cryptage/décryptage <br>
+            Entrez ensuite votre texte à crypter, puis cliquez sur CRYPTER. <br>
+        </div>
+        <?php } ?>
+        <?php if(PAGE_CODE == 2){ ?>
+       <div class="infoSecondary">
+            Pour décrypter votre message, la "passe-phrase" qui a servie au cryptage <br>
+            Si vous n'êtes pas l'auteur de cryptage, demandez la clé à l'auteur. <br>
+            ATTENTION : vous devez bien respecter les majuscules et éventuels espaces.
+        </div>
+        <?php } ?>
+	
+        
+        <form action="crypton?codepage=<?php echo PAGE_CODE ?>&typepage=2" method="post">
+            <p> Entrez une clé de chiffrement (mot/phrase) :</p>
+            <input type="text" name="keyPass">
+
+            <p> Saisissez le texte à <?php echo $GLOBALS['page'.PAGE_CODE] ?> ci-dessous</p>
+            <TEXTAREA name="textocrypt" rows=10 COLS=40></TEXTAREA>
+            <input type="submit" value="<?php echo $GLOBALS['page'.PAGE_CODE] ?>"></input>    
+        </form>
+		
+	</div>
+</div>
+<?php
+    
+
+//src="../application/library/images/logo.png"

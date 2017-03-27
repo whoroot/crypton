@@ -1,0 +1,53 @@
+<?php 
+
+#-> DEFINITION DES VARIABLES GLOBALES <-#
+    global $viewFooter, $viewAuth, $viewContent,$viewMenu;
+#-> END <-#
+?>
+
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Balise magique pour le responsive -->
+	    <meta name="viewport" content="width=device-width, maximum-scale=1"/>
+	<!-- Inclusion de l'icone d'onglet -->
+	    <link rel="shortcut icon" type="image/x-icon" href="<?php echo PATH_ABSOLUT.PATH_LIB.'/images/jgc.ico'; ?>" />
+	<!-- Inclusion de typos googleFont -->
+         <link href="https://fonts.googleapis.com/css?family=Orbitron|Rajdhani" rel="stylesheet">
+    <head>
+		<title><?php echo TITRESITESHORT.' - '.$GLOBALS['page'.PAGE_CODE]; ?> </title>
+	</head>
+	
+	<body>
+	
+		<!-- Bandeau supérieur. -->
+		<div id="top">
+			<?php// echo module_render( 'Auth', $viewAuth); ?>
+			<div class="wrapper" style="overflow-x:auto;">	
+                <header>
+                    <!-- bouton MENU pour version Mobile -->
+                    <!--a class="to_nav" href="#primary_nav">Listes</a-->
+                </header>
+            </div>
+		</div>
+		
+		<!-- Panneau MENU. -->
+		<div id="menu">
+			<?php //echo module_render( 'Menu', $viewMenu); ?>
+		</div>
+		
+		<!-- Zone du contenu principal. -->
+		<div id="content">
+			<?php echo module_render( 'Content', $viewContent); ?>
+		</div>
+		
+		<!-- Logo -->
+        <div class="cellCenter">
+            <a href="index"><img src="<?php echo PATH_IMG;?>/logo.png" alt="" class="logo"></a>
+        </div>
+
+		<!-- Zone du pied de page. -->
+		<div id="footer">
+			<?php echo module_render( 'Footer', $viewFooter); ?>
+		</div>
+	</body>
+</html>

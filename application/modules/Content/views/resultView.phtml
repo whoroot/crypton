@@ -1,0 +1,37 @@
+<?php 
+#-> DEFINITION DES VARIABLES GLOBALES <-#
+    global $viewContent,$aResult,$uniqId,$aTextMoveCrypted;
+#-> END <-#
+/**
+Index général.
+Si l'utilisateur arrive sur cette page, c'est qu'il n'est pas authentifé.
+Ce Module VIEW INDEX est donc vide, car le formulaire de connexion apparaît dans le Module AUTH LOGIN
+
+**/
+?>
+
+
+<div class="wrapper" style="overflow-x:auto;">
+<h1><?php echo $GLOBALS['page'.PAGE_CODE] ?></h1>
+	<div class="blocText">
+        <p> Voici le <?php echo $GLOBALS['adverb_page'.PAGE_CODE]; ?> de votre message :</p>
+        <TEXTAREA cols="50" rows="10" class="js-copytextarea"><?php foreach($aTextMoveCrypted as $key => $item){echo $item;}?></TEXTAREA>
+        <?php 
+            if(isset($uniqId)){ ?>
+                <p> Votre clé UNIQUE de chiffrement est : 
+                <table>
+                    <tr>
+                        <td class="tdFocus">
+                           <?php echo $uniqId; ?> 
+                        </td>
+                    </tr>
+                </table>
+                </p>
+        <?php } ?>
+        
+
+<p>
+  <button class="js-textareacopybtn BtnSmall">COPIER</button>
+</p>
+    </div>
+

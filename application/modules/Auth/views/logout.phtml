@@ -1,0 +1,35 @@
+<?php
+/* Définition des variables globales. */
+global $viewAuth, $title, $messages,$rootpath;
+?>
+
+<div class="headerAuth">
+<!-- Formulaire de déconnexion -->
+<form name="deconnexion" id="deconnexion" method="post" action="index.php">
+	<div class="auth">
+<?php
+
+if (!isset ($_SESSION['userid'])) {
+	$_SESSION['user']= "Session Vide";
+	 
+	echo '<label><h6>'.$_SESSION['userid'].' <br/>'.$messages['alerte1'].'</h6>';
+}
+
+else{
+echo '<label>'.$_SESSION['userfirstname'].' '.$_SESSION['username'].' ['.$_SESSION['userid'].'] - '.$_SESSION['nom_profil'].''; 
+}
+
+?>
+</label>
+
+    <input name="deconnexion" type="submit" value="<?php echo $messages['disconnecting'] ?>" />
+</div>
+</form>
+    <div class="flagNav">
+       <img src="<?php echo ROOTPATH ?>/application/library/images/fr.png" width="15px"/> <a href="<?php echo ROOTPATH ?>/public">Français</a>
+        <img src="<?php echo ROOTPATH ?>/application/library/images/en.png" width="20px"/> <a href="<?php echo ROOTPATH ?>/public/en">English</a>
+        <img src="<?php echo ROOTPATH ?>/application/library/images/es.png" width="15px"/> <a href="<?php echo ROOTPATH ?>/public/es">Espanol</a>
+    </div>
+<div id="lignesepar"></div>
+
+</div>
